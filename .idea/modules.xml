@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/dmp_kudu/dmp_kudu.iml" filepath="$PROJECT_DIR$/dmp_kudu/dmp_kudu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dmp_main/dmp_main.iml" filepath="$PROJECT_DIR$/dmp_main/dmp_main.iml" />
+    </modules>
+  </component>
+</project>
