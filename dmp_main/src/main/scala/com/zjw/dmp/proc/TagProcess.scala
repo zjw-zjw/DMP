@@ -18,8 +18,7 @@ import sun.misc.ObjectInputFilter.Config
 import scala.tools.scalap.scalax.util.StringUtil
 
 /**
-  * 生成用户的标签
-  * 添加注释.
+  * 生成用户的标
   */
 object TagProcess {
 
