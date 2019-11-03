@@ -186,10 +186,10 @@ object TagProcess {
 
     val kuduContext = new KuduContext(ConfUtils.MASTER, spark.sparkContext)
     // 将聚合的标签存放在kudu中
-    val result = aggTagRdd.map{
+    val result: DataFrame = aggTagRdd.map{
       case (id, (allUserId, tags)) =>
-        val userId = allUserId.mkString(",")
-        val tagStr = tags.mkString("#")
+        val userId: String = allUserId.mkString(",")
+        val tagStr: String = tags.mkString("#")
         (id, userId, tagStr)
     }.toDF("userId", "allUserId", "tags")
     // 定义主键

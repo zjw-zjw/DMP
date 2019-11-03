@@ -40,9 +40,8 @@ object UserGraphx {
     // 4. 得到连通图
     val connectedGraph: Graph[VertexId, Int] = graph.connectedComponents()
     // 5. 标签聚合
-    // (id, aggId) join (id, (allUserId, tags)) => (id, (aggId, (allUserId, tags)))
     val vertices: VertexRDD[VertexId] = connectedGraph.vertices
-   // vertices.foreach(println(_))
+    // (id, aggId) join (id, (allUserId, tags)) => (id, (aggId, (allUserId, tags)))
     val joinRdd = vertices.join(vertexRdd)
 
     // 6. 数据返回
