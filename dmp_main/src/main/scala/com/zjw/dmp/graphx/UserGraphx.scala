@@ -11,12 +11,13 @@ import scala.collection.mutable.ListBuffer
 object UserGraphx {
 
   def graph(tagRDD: RDD[(String, (List[String], Map[String, Double]))]) ={
+    // cache一下
     val newTagRdd = tagRDD.cache()
     // 1. 建立点
     val vertexRdd: RDD[(VertexId, (List[String], Map[String, Double]))] = newTagRdd.map{
       case (id, (allUserId, tags)) =>
         // 点的唯一Id
-      val vertexId = id.hashCode.toLong
+      val vertexId: VertexId = id.hashCode.toLong
         (vertexId, (allUserId, tags))
     }
     // 2. 建立边

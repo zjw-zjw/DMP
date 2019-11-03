@@ -142,7 +142,7 @@ object TagProcess {
       // 4.8 生成商圈标签
       val businessAreaTags = BusinessAreaTag.makeTag(row)
 
-      val tags = appTags ++ deviceTags ++ regionTags  ++ channelTags ++ keyWordsTags ++ ageTags ++ sexTags  ++ businessAreaTags
+      val tags: Map[String, Double] = appTags ++ deviceTags ++ regionTags  ++ channelTags ++ keyWordsTags ++ ageTags ++ sexTags  ++ businessAreaTags
 
       // 4.9 生成用户标识, 标识用户
       val ids: List[String] = getUserAllIds(row)
@@ -227,6 +227,7 @@ object TagProcess {
     */
   def getUserAllIds(row:Row) ={
     var result = List[String]()
+
     val imei = row.getAs[String]("imei")
     val idfa = row.getAs[String]("idfa")
     val mac = row.getAs[String]("mac")
